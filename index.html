@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Marco Orlando - Computational Biologist</title>
-    
+
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Marco Orlando - Computational Biologist & Protein Designer. Specializing in AI-driven protein engineering, molecular dynamics, and bioinformatics.">
-    <meta name="keywords" content="Marco Orlando, Biochorl, Computational Biology, Protein Design, Bioinformatics, CDKL5, Nanobodies">
+    <meta name="description"
+        content="Marco Orlando - Computational Biologist & Protein Designer. Specializing in AI-driven protein engineering, molecular dynamics, and bioinformatics.">
+    <meta name="keywords"
+        content="Marco Orlando, Biochorl, Computational Biology, Protein Design, Bioinformatics, CDKL5, Protein Binders">
     <meta name="author" content="Marco Orlando">
-    
+
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
@@ -21,9 +24,13 @@
             --light: #f8fafc;
             --text-gray: #64748b;
         }
-        
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
         body {
             font-family: 'Inter', sans-serif;
             color: var(--dark);
@@ -32,9 +39,9 @@
             scroll-behavior: smooth;
         }
 
-        /* Hero Section */
+        /* Compact Hero Section */
         .hero {
-            height: 100vh;
+            padding: 4rem 2rem;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -42,12 +49,24 @@
             text-align: center;
             background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
             color: white;
-            padding: 2rem;
+            min-height: 50vh;
+            /* Reduced height */
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid var(--primary);
+            object-fit: cover;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+            animation: fadeIn 1s ease-out;
         }
 
         .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
             background: linear-gradient(to right, #60a5fa, #a78bfa);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -55,16 +74,16 @@
 
         .typing-text {
             font-family: monospace;
-            font-size: 1.25rem;
+            font-size: 1.1rem;
             color: #94a3b8;
-            margin-bottom: 2rem;
-            min-height: 1.5em; 
+            margin-bottom: 1.5rem;
+            min-height: 1.5em;
         }
 
         .social-links {
             display: flex;
             gap: 1.5rem;
-            margin-top: 1rem;
+            margin-top: 0.5rem;
         }
 
         .social_btn {
@@ -73,21 +92,26 @@
             transition: transform 0.2s, color 0.2s;
             text-decoration: none;
         }
-        .social_btn:hover { transform: translateY(-3px); color: var(--primary); }
+
+        .social_btn:hover {
+            transform: translateY(-3px);
+            color: var(--primary);
+        }
 
         /* Sections */
         section {
-            padding: 4rem 2rem;
+            padding: 3rem 2rem;
             max-width: 1000px;
             margin: 0 auto;
         }
 
         h2 {
-            font-size: 2rem;
-            margin-bottom: 2rem;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
             position: relative;
             display: inline-block;
         }
+
         h2::after {
             content: '';
             display: block;
@@ -95,6 +119,13 @@
             height: 3px;
             background: var(--primary);
             margin-top: 0.5rem;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
         }
 
         .project-card {
@@ -114,64 +145,118 @@
 
         /* Publication List */
         .pub-item {
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.2rem;
             padding-left: 1rem;
             border-left: 3px solid #e2e8f0;
             transition: border-color 0.2s;
         }
-        .pub-item:hover { border-left-color: var(--primary); }
-        .pub-title { font-weight: 600; display: block; color: var(--dark); text-decoration: none; }
-        .pub-meta { font-size: 0.9rem; color: var(--text-gray); }
+
+        .pub-item:hover {
+            border-left-color: var(--primary);
+        }
+
+        .pub-title {
+            font-weight: 600;
+            display: block;
+            color: var(--dark);
+            text-decoration: none;
+            line-height: 1.4;
+        }
+
+        .pub-title:hover {
+            color: var(--primary);
+        }
+
+        .pub-meta {
+            font-size: 0.85rem;
+            color: var(--text-gray);
+            margin-top: 0.2rem;
+        }
 
         /* Repos Grid */
         #repos-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 1.5rem;
         }
+
         .repo-card {
             background: white;
             padding: 1.5rem;
             border-radius: 8px;
             border: 1px solid #e2e8f0;
-            transition: transform 0.2s;
+            transition: transform 0.2s, box-shadow 0.2s;
         }
-        .repo-card:hover { transform: translateY(-5px); box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); }
-        .repo-name { font-weight: 700; color: var(--primary); text-decoration: none; display: block; margin-bottom: 0.5rem; }
-        .repo-desc { font-size: 0.9rem; color: var(--text-gray); }
 
-        /* Helper for typing effect */
-        @keyframes typing { from { width: 0 } to { width: 100% } }
+        .repo-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .repo-name {
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .repo-desc {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+        }
+
+        /* Helpers */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .skills-badges img {
+            margin: 3px;
+            height: 25px;
+        }
     </style>
 </head>
+
 <body>
 
     <!-- Hero -->
     <header class="hero">
+        <img src="https://github.com/biochorl.png" alt="Marco Orlando" class="profile-img">
         <h1>Marco Orlando</h1>
         <div class="typing-text" id="typewriter"></div>
-        
+
         <div class="social-links">
-            <a href="mailto:marco.orlando@ung.si" class="social_btn" title="Email">Email</a>
-            <a href="https://www.linkedin.com/in/marco-orlando-bioch91" class="social_btn" title="LinkedIn">LinkedIn</a>
-            <a href="https://scholar.google.com/citations?user=0Aok1wQAAAAJ" class="social_btn" title="Scholar">Scholar</a>
-            <a href="https://github.com/biochorl" class="social_btn" title="GitHub">GitHub</a>
+            <a href="mailto:marco.orlando@ung.si" class="social_btn" title="Email"><i class="fas fa-envelope"></i>
+                Email</a>
+            <a href="https://www.linkedin.com/in/marco-orlando-bioch91" class="social_btn" title="LinkedIn"><i
+                    class="fab fa-linkedin"></i> LinkedIn</a>
+            <a href="https://scholar.google.com/citations?user=0Aok1wQAAAAJ" class="social_btn" title="Scholar"><i
+                    class="fas fa-graduation-cap"></i> Scholar</a>
+            <a href="https://github.com/biochorl" class="social_btn" title="GitHub"><i class="fab fa-github"></i>
+                GitHub</a>
         </div>
-        
-        <a href="#about" style="margin-top: 3rem; color: #94a3b8; font-size: 2rem; animation: bounce 2s infinite;">↓</a>
     </header>
 
     <!-- About -->
-    <section id="about">
+    <section id="about" style="padding-top: 2rem;">
         <h2>About Me</h2>
         <p>
-            I am a <strong>Computational Biologist</strong> with extensive wet-lab expertise, working for over 8 years in the characterization of novel proteins/enzymes and studying structure-function interconnections during evolution. I specialize in integrating wet-lab and computational methods.
+            I am a **Computational Biologist** with extensive wet-lab expertise, working for over 8 years in the
+            characterization of novel proteins/enzymes and studying structure-function interconnections during
+            evolution. I specialize in integrating wet-lab and computational methods.
             <br><br>
-            Currently, I am focusing on <strong>Protein Design</strong>, developing custom workflows that integrate AI- and physics-based methods to generate binders for folded and unfolded epitopes of medically relevant biomarkers.
+            Currently, I am focusing on **Protein Design**, developing custom workflows that integrate AI- and
+            physics-based methods to generate binders for folded and unfolded epitopes of medically relevant biomarkers.
         </p>
-        <blockquote style="margin: 1.5rem 0; padding: 1rem; background: #eff6ff; border-left: 4px solid var(--primary); font-style: italic;">
-            "I want to drive innovation in protein and biocatalyst discovery, evolution, and engineering for industrial and biomedical applications."
-        </blockquote>
     </section>
 
     <!-- Current Project -->
@@ -179,39 +264,209 @@
         <h2>Current Main Project</h2>
         <div class="project-card">
             <h3>AI-Driven Design of CDKL5 Binders with Minimal Screening</h3>
-            <p style="margin-top: 1rem; color: var(--text-gray);">
-                Developing an AI-driven pipeline to target challenging, poorly immunogenic biomarkers like CDKL5. We integrate Machine Learning to design and re-design protein binders against folded and unfolded epitopes, optimizing for developability to distinguish isoforms. 
+            <p style="color: var(--text-gray);">
+                Developing an AI-driven pipeline to target challenging, poorly immunogenic biomarkers like CDKL5. We
+                integrate Machine Learning to design and re-design protein binders against folded and unfolded epitopes,
+                optimizing for developability to distinguish isoforms.
                 <br><br>
-                <strong>A key focus is achieving success with minimal experimental screening (&lt;15 characterized designs), leveraging computational precision to bypass high-throughput bottlenecks.</strong>
+                <strong>A key focus is achieving success with minimal experimental screening (&lt;15 characterized
+                    designs), leveraging computational precision to bypass high-throughput bottlenecks.</strong>
             </p>
             <img src="assets/images/ensemble_animation.gif" alt="Design workflow" class="project-img">
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills">
+        <h2>Skills & Expertise</h2>
+
+        <h3>Bioinformatics & Computational</h3>
+        <div class="skills-badges">
+            <img alt="Protein Function Annotation"
+                src="https://img.shields.io/badge/Protein%20Function%20Annotation-0056B3?style=for-the-badge">
+            <img alt="Structural Biology"
+                src="https://img.shields.io/badge/Structural%20Biology-0056B3?style=for-the-badge">
+            <img alt="Molecular Dynamics"
+                src="https://img.shields.io/badge/Molecular%20Dynamics-0056B3?style=for-the-badge">
+            <img alt="Binding Free Energy"
+                src="https://img.shields.io/badge/Binding%20Free%20Energy-0056B3?style=for-the-badge">
+            <img alt="Conformational Analysis"
+                src="https://img.shields.io/badge/Conformational%20Analysis-0056B3?style=for-the-badge">
+            <br>
+            <img alt="Phylogenetics" src="https://img.shields.io/badge/Phylogenetics-0056B3?style=for-the-badge">
+            <img alt="Ancestral Reconstruction"
+                src="https://img.shields.io/badge/Ancestral%20Reconstruction-0056B3?style=for-the-badge">
+            <img alt="AI Protein Design"
+                src="https://img.shields.io/badge/AI--based%20Protein%20Design-0056B3?style=for-the-badge">
+            <img alt="Physics-based Design"
+                src="https://img.shields.io/badge/Physics--based%20Protein%20Design-0056B3?style=for-the-badge">
+        </div>
+
+        <h3>Tools & Languages</h3>
+        <div class="skills-badges">
+            <img alt="Python"
+                src="https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=yellow&style=for-the-badge">
+            <img alt="Bash"
+                src="https://img.shields.io/badge/Bash-000000?logo=gnubash&logoColor=white&style=for-the-badge">
+            <img alt="Linux"
+                src="https://img.shields.io/badge/Linux-FCC624?logo=Linux&logoColor=black&style=for-the-badge">
+            <img alt="Jupyter"
+                src="https://img.shields.io/badge/Jupyter-F37626?logo=jupyter&logoColor=white&style=for-the-badge">
+            <img alt="Plotly"
+                src="https://img.shields.io/badge/Plotly-11557C?logo=plotly&logoColor=white&style=for-the-badge">
+            <img alt="Colab"
+                src="https://img.shields.io/badge/Google%20Colab-F9AB00?logo=googlecolab&logoColor=white&style=for-the-badge">
+        </div>
+
+        <h3>Laboratory Skills</h3>
+        <div class="skills-badges">
+            <img alt="Protein Expression & Purification"
+                src="https://img.shields.io/badge/Protein%20Expression%20&%20Purification-28A745?style=for-the-badge">
+            <img alt="Enzyme Kinetics" src="https://img.shields.io/badge/Enzyme%20Kinetics-28A745?style=for-the-badge">
+            <img alt="Biophysical Analysis (CD/Fluoro)"
+                src="https://img.shields.io/badge/Biophysical%20Analysis-28A745?style=for-the-badge">
+            <img alt="Microbial Cell Culture"
+                src="https://img.shields.io/badge/Microbial%20Cell%20Culture-28A745?style=for-the-badge">
+            <img alt="Mutagenic PCR" src="https://img.shields.io/badge/Mutagenic%20PCR-28A745?style=for-the-badge">
+            <img alt="Plasmid Design" src="https://img.shields.io/badge/Plasmid%20Design-28A745?style=for-the-badge">
         </div>
     </section>
 
     <!-- Repositories -->
     <section id="repos">
         <h2>Featured Repositories</h2>
-        <p style="margin-bottom: 2rem; color: var(--text-gray);">Selection of my open-source work from GitHub.</p>
         <div id="repos-grid">Loading...</div>
     </section>
 
     <!-- Publications -->
     <section id="publications">
         <h2>Selected Publications</h2>
-        
+
         <h3>Protein Design & Structural Biology</h3>
-        <div class="pub-item">
-            <a href="https://scholar.google.com/citations?view_op=view_citation&hl=it&user=0Aok1wQAAAAJ&cstart=20&pagesize=80&citation_for_view=0Aok1wQAAAAJ:iH-uZ7U-co4C" class="pub-title">An integrative structural biology approach to identify the binding mode of a nanobody towards the pea ascorbate peroxidase</a>
-            <div class="pub-meta">C D’Ercole, M Orlando, et al. • Computational and Structural Biotechnology Journal</div>
+        <div class="pub-item"><a
+                href="https://scholar.google.com/citations?view_op=view_citation&hl=it&user=0Aok1wQAAAAJ&cstart=20&pagesize=80&citation_for_view=0Aok1wQAAAAJ:iH-uZ7U-co4C"
+                class="pub-title">An integrative structural biology approach to identify the binding mode of a nanobody
+                towards the pea ascorbate peroxidase</a>
+            <div class="pub-meta">C D’Ercole, M Orlando, KE Filipič, A De Marco • Computational and Structural
+                Biotechnology Journal</div>
         </div>
-        <div class="pub-item">
-            <a href="https://scholar.google.com/citations?view_op=view_citation&hl=it&user=0Aok1wQAAAAJ&cstart=20&pagesize=80&citation_for_view=0Aok1wQAAAAJ:M3ejUd6NZC8C" class="pub-title">A crucial active site network of titratable residues guides catalysis and NAD+ binding in human succinic semialdehyde dehydrogenase</a>
+        <div class="pub-item"><a
+                href="https://scholar.google.com/citations?view_op=view_citation&hl=it&user=0Aok1wQAAAAJ&cstart=20&pagesize=80&citation_for_view=0Aok1wQAAAAJ:M3ejUd6NZC8C"
+                class="pub-title">A crucial active site network of titratable residues guides catalysis and NAD+ binding
+                in human succinic semialdehyde dehydrogenase</a>
             <div class="pub-meta">S Cesaro, M Orlando, et al. • Protein Science</div>
         </div>
-        
-        <!-- More publications can be added here similarly -->
-        <p style="margin-top: 1rem;"><a href="https://scholar.google.com/citations?user=0Aok1wQAAAAJ" style="color: var(--primary);">View full list on Google Scholar &rarr;</a></p>
+        <div class="pub-item"><a
+                href="https://scholar.google.com/citations?view_op=view_citation&hl=it&user=0Aok1wQAAAAJ&citation_for_view=0Aok1wQAAAAJ:LkGwnXOMwfcC"
+                class="pub-title">Biochemical and cellular studies of three human 3‐phosphoglycerate dehydrogenase
+                variants responsible for pathological reduced L‐serine levels</a>
+            <div class="pub-meta">G Murtas, E Zerbini, et al. • Biofactors</div>
+        </div>
+        <div class="pub-item"><a
+                href="https://scholar.google.com/citations?view_op=view_citation&hl=it&user=0Aok1wQAAAAJ&citation_for_view=0Aok1wQAAAAJ:0EnyYjriUFMC"
+                class="pub-title">On the quaternary structure of human D‐3‐phosphoglycerate dehydrogenase</a>
+            <div class="pub-meta">D Riva, M Orlando, V Rabattoni, L Pollegioni • Protein Science</div>
+        </div>
+        <div class="pub-item"><a
+                href="https://scholar.google.com/citations?view_op=view_citation&hl=it&user=0Aok1wQAAAAJ&citation_for_view=0Aok1wQAAAAJ:HDshCWvjkbEC"
+                class="pub-title">The co‐existence of cold activity and thermal stability in an Antarctic GH42
+                β‐galactosidase relies on its hexameric quaternary arrangement</a>
+            <div class="pub-meta">M Mangiagalli, M Lapi, et al. • The FEBS Journal</div>
+        </div>
+        <div class="pub-item"><a
+                href="https://scholar.google.com/citations?view_op=view_citation&hl=it&user=0Aok1wQAAAAJ&citation_for_view=0Aok1wQAAAAJ:hqOjcs7Dif8C"
+                class="pub-title">An anti-HER2 nanobody binds to its antigen HER2 via two independent paratopes</a>
+            <div class="pub-meta">D Ubbiali, M Orlando, et al. • International journal of biological macromolecules
+            </div>
+        </div>
+        <div class="pub-item"><a
+                href="https://scholar.google.com/citations?view_op=view_citation&hl=it&user=0Aok1wQAAAAJ&citation_for_view=0Aok1wQAAAAJ:L8Ckcad2t8MC"
+                class="pub-title">CDR1 composition can affect nanobody recombinant expression yields</a>
+            <div class="pub-meta">M Orlando, S Fortuna, et al. • Biomolecules</div>
+        </div>
+
+        <h3>Enzymes for Plastic Degradation & Circular Economy</h3>
+        <div class="pub-item"><a
+                href="https://scholar.google.com/citations?view_op=view_citation&hl=it&user=0Aok1wQAAAAJ&citation_for_view=0Aok1wQAAAAJ:_FxGoFyzp5QC"
+                class="pub-title">Valorization of organic waste through black soldier fly: On the way of a real circular
+                bioeconomy process</a>
+            <div class="pub-meta">D Bruno, M Orlando, et al. • Waste Management</div>
+        </div>
+        <div class="pub-item"><a
+                href="https://scholar.google.com/citations?view_op=view_citation&hl=it&user=0Aok1wQAAAAJ&citation_for_view=0Aok1wQAAAAJ:-f6ydRqryjwC"
+                class="pub-title">Electroconductive bionanocomposites from black soldier fly proteins for green flexible
+                electronics</a>
+            <div class="pub-meta">E Testa, M Orlando, et al. • ACS Sustainable Chemistry & Engineering</div>
+        </div>
+        <div class="pub-item"><a
+                href="https://scholar.google.com/citations?view_op=view_citation&hl=it&user=0Aok1wQAAAAJ&citation_for_view=0Aok1wQAAAAJ:4DMP91E08xMC"
+                class="pub-title">Plastic-degrading microbial consortia from a wastewater treatment plant</a>
+            <div class="pub-meta">A Salini, M Orlando, et al. • Int. J. Mol. Sci.</div>
+        </div>
+        <div class="pub-item"><a
+                href="https://scholar.google.com/citations?view_op=view_citation&hl=it&user=0Aok1wQAAAAJ&citation_for_view=0Aok1wQAAAAJ:qxL8FJ1GzNcC"
+                class="pub-title">Microbial enzyme biotechnology to reach plastic waste circularity: current status,
+                problems and perspectives</a>
+            <div class="pub-meta">M Orlando, G Molla, et al. • Int. J. Mol. Sci.</div>
+        </div>
+        <div class="pub-item"><a
+                href="https://scholar.google.com/citations?view_op=view_citation&hl=it&user=0Aok1wQAAAAJ&citation_for_view=0Aok1wQAAAAJ:roLk4NBRz8UC"
+                class="pub-title">Efficient polyethylene terephthalate degradation at moderate temperature: a protein
+                engineering study...</a>
+            <div class="pub-meta">V Pirillo, M Orlando, et al. • The FEBS Journal</div>
+        </div>
+
+        <h3>Carbohydrate-Active Enzymes & Extremophiles</h3>
+        <div class="pub-item"><a
+                href="https://scholar.google.com/citations?view_op=view_citation&hl=it&user=0Aok1wQAAAAJ&citation_for_view=0Aok1wQAAAAJ:7PzlFSSx8tAC"
+                class="pub-title">Polysaccharide degradation in an Antarctic bacterium: Discovery of glycoside
+                hydrolases...</a>
+            <div class="pub-meta">M Orlando, A Marchetti, et al. • Int. J. Biol. Macromolecules</div>
+        </div>
+        <div class="pub-item"><a
+                href="https://scholar.google.com/citations?view_op=view_citation&hl=it&user=0Aok1wQAAAAJ&citation_for_view=0Aok1wQAAAAJ:kNdYIx-mwKoC"
+                class="pub-title">Xylan Degradation in the Halotolerant Bacterium Bacillus altitudinis relies on
+                glycosidic hydrolases...</a>
+            <div class="pub-meta">A Marchetti, M Orlando, et al. • J. Agric. Food Chem.</div>
+        </div>
+        <div class="pub-item"><a
+                href="https://scholar.google.com/citations?view_op=view_citation&hl=it&user=0Aok1wQAAAAJ&citation_for_view=0Aok1wQAAAAJ:IWHjjKOFINEC"
+                class="pub-title">Evolutionary history and activity towards oligosaccharides... of GH3 glycosidases</a>
+            <div class="pub-meta">A Marchetti, M Orlando, et al. • Int. J. Biol. Macromolecules</div>
+        </div>
+        <div class="pub-item"><a
+                href="https://scholar.google.com/citations?view_op=view_citation&hl=it&user=0Aok1wQAAAAJ&citation_for_view=0Aok1wQAAAAJ:ufrVoPGSRksC"
+                class="pub-title">The GH19 Engineering Database: Sequence diversity, substrate scope, and
+                evolution...</a>
+            <div class="pub-meta">M Orlando, M Lotti, J Pleiss • PLoS One</div>
+        </div>
+        <div class="pub-item"><a
+                href="https://scholar.google.com/citations?view_op=view_citation&hl=it&user=0Aok1wQAAAAJ&citation_for_view=0Aok1wQAAAAJ:Wp0gIr-vW9MC"
+                class="pub-title">The “cold revolution”. Present and future applications of cold-active enzymes...</a>
+            <div class="pub-meta">M Mangiagalli, M Orlando, et al. • New biotechnology</div>
+        </div>
+
+        <h3>Phylogenetics & Biodiversity</h3>
+        <div class="pub-item"><a
+                href="https://scholar.google.com/citations?view_op=view_citation&hl=it&user=0Aok1wQAAAAJ&citation_for_view=0Aok1wQAAAAJ:mVmsd5A6BfQC"
+                class="pub-title">Towards elucidating species diversity of European inland Strigamia...</a>
+            <div class="pub-meta">L Bonato, M Orlando, et al. • Zoological Journal of the Linnean Society</div>
+        </div>
+        <div class="pub-item"><a
+                href="https://scholar.google.com/citations?view_op=view_citation&hl=it&user=0Aok1wQAAAAJ&citation_for_view=0Aok1wQAAAAJ:KlAtU1dfN6UC"
+                class="pub-title">New insights into Plutonium, one of the largest and least known European
+                centipedes...</a>
+            <div class="pub-meta">L Bonato, M Orlando, et al. • Zoological Journal of the Linnean Society</div>
+        </div>
+
     </section>
+
+    <!-- Footer -->
+    <footer style="text-align: center; padding: 2rem; color: #94a3b8; font-size: 0.9rem;">
+        <p>&copy; 2026 Marco Orlando. All rights reserved.</p>
+        <p style="margin-top: 0.5rem;">"Science is simply the word we use to describe a method of organizing our
+            curiosity."</p>
+    </footer>
 
     <!-- Script to fetch Repos + Typing Effect -->
     <script>
@@ -233,13 +488,13 @@
             const username = 'biochorl';
             const response = await fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=6`);
             const repos = await response.json();
-            
+
             const grid = document.getElementById('repos-grid');
             grid.innerHTML = '';
-            
+
             repos.forEach(repo => {
-                if(repo.fork && repo.stargazers_count < 1) return; // Skip minor forks
-                
+                if (repo.fork && repo.stargazers_count < 1 && repo.name !== 'biochorl.github.io') return;
+
                 const card = document.createElement('div');
                 card.className = 'repo-card';
                 card.innerHTML = `
@@ -256,4 +511,5 @@
         fetchRepos();
     </script>
 </body>
+
 </html>
