@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marco Orlando - Computational Biologist</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Marco Orlando - Computational Biologist & Protein Designer. Specializing in AI-driven protein engineering, molecular dynamics, and bioinformatics.">
+    <meta name="keywords" content="Marco Orlando, Biochorl, Computational Biology, Protein Design, Bioinformatics, CDKL5, Nanobodies">
+    <meta name="author" content="Marco Orlando">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    <style>
+        :root {
+            --primary: #2563eb;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --text-gray: #64748b;
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--dark);
+            background-color: var(--light);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            color: white;
+            padding: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, #60a5fa, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .typing-text {
+            font-family: monospace;
+            font-size: 1.25rem;
+            color: #94a3b8;
+            margin-bottom: 2rem;
+            min-height: 1.5em; 
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .social_btn {
+            color: white;
+            font-size: 1.5rem;
+            transition: transform 0.2s, color 0.2s;
+            text-decoration: none;
+        }
+        .social_btn:hover { transform: translateY(-3px); color: var(--primary); }
+
+        /* Sections */
+        section {
+            padding: 4rem 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            position: relative;
+            display: inline-block;
+        }
+        h2::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background: var(--primary);
+            margin-top: 0.5rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+
+        .project-img {
+            width: 100%;
+            border-radius: 8px;
+            margin-top: 1.5rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Publication List */
+        .pub-item {
+            margin-bottom: 1.5rem;
+            padding-left: 1rem;
+            border-left: 3px solid #e2e8f0;
+            transition: border-color 0.2s;
+        }
+        .pub-item:hover { border-left-color: var(--primary); }
+        .pub-title { font-weight: 600; display: block; color: var(--dark); text-decoration: none; }
+        .pub-meta { font-size: 0.9rem; color: var(--text-gray); }
+
+        /* Repos Grid */
+        #repos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        .repo-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+            transition: transform 0.2s;
+        }
+        .repo-card:hover { transform: translateY(-5px); box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); }
+        .repo-name { font-weight: 700; color: var(--primary); text-decoration: none; display: block; margin-bottom: 0.5rem; }
+        .repo-desc { font-size: 0.9rem; color: var(--text-gray); }
+
+        /* Helper for typing effect */
+        @keyframes typing { from { width: 0 } to { width: 100% } }
+    </style>
+</head>
+<body>
+
+    <!-- Hero -->
+    <header class="hero">
+        <h1>Marco Orlando</h1>
+        <div class="typing-text" id="typewriter"></div>
+        
+        <div class="social-links">
+            <a href="mailto:marco.orlando@ung.si" class="social_btn" title="Email">Email</a>
+            <a href="https://www.linkedin.com/in/marco-orlando-bioch91" class="social_btn" title="LinkedIn">LinkedIn</a>
+            <a href="https://scholar.google.com/citations?user=0Aok1wQAAAAJ" class="social_btn" title="Scholar">Scholar</a>
+            <a href="https://github.com/biochorl" class="social_btn" title="GitHub">GitHub</a>
+        </div>
+        
+        <a href="#about" style="margin-top: 3rem; color: #94a3b8; font-size: 2rem; animation: bounce 2s infinite;">↓</a>
+    </header>
+
+    <!-- About -->
+    <section id="about">
+        <h2>About Me</h2>
+        <p>
+            I am a <strong>Computational Biologist</strong> with extensive wet-lab expertise, working for over 8 years in the characterization of novel proteins/enzymes and studying structure-function interconnections during evolution. I specialize in integrating wet-lab and computational methods.
+            <br><br>
+            Currently, I am focusing on <strong>Protein Design</strong>, developing custom workflows that integrate AI- and physics-based methods to generate binders for folded and unfolded epitopes of medically relevant biomarkers.
+        </p>
+        <blockquote style="margin: 1.5rem 0; padding: 1rem; background: #eff6ff; border-left: 4px solid var(--primary); font-style: italic;">
+            "I want to drive innovation in protein and biocatalyst discovery, evolution, and engineering for industrial and biomedical applications."
+        </blockquote>
+    </section>
+
+    <!-- Current Project -->
+    <section id="project">
+        <h2>Current Main Project</h2>
+        <div class="project-card">
+            <h3>AI-Driven Design of CDKL5 Binders with Minimal Screening</h3>
+            <p style="margin-top: 1rem; color: var(--text-gray);">
+                Developing an AI-driven pipeline to target challenging, poorly immunogenic biomarkers like CDKL5. We integrate Machine Learning to design and re-design protein binders against folded and unfolded epitopes, optimizing for developability to distinguish isoforms. 
+                <br><br>
+                <strong>A key focus is achieving success with minimal experimental screening (&lt;15 characterized designs), leveraging computational precision to bypass high-throughput bottlenecks.</strong>
+            </p>
+            <img src="assets/images/ensemble_animation.gif" alt="Design workflow" class="project-img">
+        </div>
+    </section>
+
+    <!-- Repositories -->
+    <section id="repos">
+        <h2>Featured Repositories</h2>
+        <p style="margin-bottom: 2rem; color: var(--text-gray);">Selection of my open-source work from GitHub.</p>
+        <div id="repos-grid">Loading...</div>
+    </section>
+
+    <!-- Publications -->
+    <section id="publications">
+        <h2>Selected Publications</h2>
+        
+        <h3>Protein Design & Structural Biology</h3>
+        <div class="pub-item">
+            <a href="https://scholar.google.com/citations?view_op=view_citation&hl=it&user=0Aok1wQAAAAJ&cstart=20&pagesize=80&citation_for_view=0Aok1wQAAAAJ:iH-uZ7U-co4C" class="pub-title">An integrative structural biology approach to identify the binding mode of a nanobody towards the pea ascorbate peroxidase</a>
+            <div class="pub-meta">C D’Ercole, M Orlando, et al. • Computational and Structural Biotechnology Journal</div>
+        </div>
+        <div class="pub-item">
+            <a href="https://scholar.google.com/citations?view_op=view_citation&hl=it&user=0Aok1wQAAAAJ&cstart=20&pagesize=80&citation_for_view=0Aok1wQAAAAJ:M3ejUd6NZC8C" class="pub-title">A crucial active site network of titratable residues guides catalysis and NAD+ binding in human succinic semialdehyde dehydrogenase</a>
+            <div class="pub-meta">S Cesaro, M Orlando, et al. • Protein Science</div>
+        </div>
+        
+        <!-- More publications can be added here similarly -->
+        <p style="margin-top: 1rem;"><a href="https://scholar.google.com/citations?user=0Aok1wQAAAAJ" style="color: var(--primary);">View full list on Google Scholar &rarr;</a></p>
+    </section>
+
+    <!-- Script to fetch Repos + Typing Effect -->
+    <script>
+        // Typing Effect
+        const textToType = "Computational Biologist | Protein Designer | Lab Automation Enthusiast";
+        const typeElement = document.getElementById('typewriter');
+        let i = 0;
+        function typeWriter() {
+            if (i < textToType.length) {
+                typeElement.innerHTML += textToType.charAt(i);
+                i++;
+                setTimeout(typeWriter, 50);
+            }
+        }
+        window.onload = typeWriter;
+
+        // Fetch GitHub Repos
+        async function fetchRepos() {
+            const username = 'biochorl';
+            const response = await fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=6`);
+            const repos = await response.json();
+            
+            const grid = document.getElementById('repos-grid');
+            grid.innerHTML = '';
+            
+            repos.forEach(repo => {
+                if(repo.fork && repo.stargazers_count < 1) return; // Skip minor forks
+                
+                const card = document.createElement('div');
+                card.className = 'repo-card';
+                card.innerHTML = `
+                    <a href="${repo.html_url}" class="repo-name">${repo.name}</a>
+                    <p class="repo-desc">${repo.description || 'No description available.'}</p>
+                    <div style="margin-top: 1rem; font-size: 0.8rem; color: #94a3b8;">
+                        <span style="margin-right: 1rem;">⭐ ${repo.stargazers_count}</span>
+                        <span>💻 ${repo.language || 'Code'}</span>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+        fetchRepos();
+    </script>
+</body>
+</html>
