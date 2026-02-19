@@ -68,8 +68,10 @@
             font-size: 2.5rem;
             margin-bottom: 0.5rem;
             background: linear-gradient(to right, #60a5fa, #a78bfa);
+            background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+
         }
 
         .typing-text {
@@ -219,9 +221,22 @@
             }
         }
 
+        .skills-badges {
+            margin-top: 1rem;
+            line-height: 2.8;
+        }
+
         .skills-badges img {
-            margin: 3px;
-            height: 25px;
+            margin: 6px;
+            height: 32px;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .skills-badges img:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
         }
     </style>
 </head>
@@ -319,10 +334,13 @@
                 src="https://img.shields.io/badge/Linux-FCC624?logo=Linux&logoColor=black&style=for-the-badge">
             <img alt="Jupyter"
                 src="https://img.shields.io/badge/Jupyter-F37626?logo=jupyter&logoColor=white&style=for-the-badge">
+            <br>
             <img alt="Plotly"
                 src="https://img.shields.io/badge/Plotly-11557C?logo=plotly&logoColor=white&style=for-the-badge">
             <img alt="Colab"
                 src="https://img.shields.io/badge/Google%20Colab-F9AB00?logo=googlecolab&logoColor=white&style=for-the-badge">
+            <img alt="Antigravity"
+                src="https://img.shields.io/badge/IDE-Antigravity-7B1FA2?style=for-the-badge&logo=rocket&logoColor=white">
         </div>
 
         <h3>Laboratory Skills</h3>
