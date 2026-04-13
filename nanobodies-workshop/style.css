@@ -20,8 +20,9 @@
 html { scroll-behavior: smooth; }
 
 body {
-  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
-  font-size: 14px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
   color: var(--text);
   background-image: url('https://raw.githubusercontent.com/biochorl/De-novo-nanobody-re-design/main/Images/Background.png');
   background-size: cover;
@@ -32,6 +33,10 @@ body {
 
 a { color: var(--primary-light); text-decoration: none; }
 a:hover { text-decoration: underline; }
+
+h1, h2, h3, h4, .font-heading {
+  font-family: 'Outfit', sans-serif;
+}
 
 /* ===== Top Bar ===== */
 #top-bar {
@@ -47,9 +52,9 @@ a:hover { text-decoration: underline; }
 
 /* ===== Header ===== */
 #site-header {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(200, 200, 200, 0.3);
   padding: 20px 24px 16px;
 }
@@ -79,9 +84,9 @@ a:hover { text-decoration: underline; }
 
 /* ===== Nav Tabs ===== */
 #main-nav {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border-bottom: 2px solid rgba(200, 200, 200, 0.3);
   display: flex;
   padding: 0 24px;
@@ -115,9 +120,9 @@ a:hover { text-decoration: underline; }
 #sidebar {
   width: var(--sidebar-width);
   min-width: var(--sidebar-width);
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
   border-right: 1px solid rgba(255, 255, 255, 0.5);
   padding: 0;
   position: sticky;
@@ -173,9 +178,9 @@ a:hover { text-decoration: underline; }
   flex: 1;
   padding: 32px 40px;
   max-width: 900px;
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
   box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.4);
   margin: 20px;
@@ -188,23 +193,24 @@ a:hover { text-decoration: underline; }
 
 /* ===== Content Typography ===== */
 #main-content h2 {
-  font-size: 22px;
-  font-weight: 700;
+  font-size: 26px;
+  font-weight: 800;
   color: var(--orange);
-  margin-bottom: 18px;
+  margin-bottom: 20px;
   padding-bottom: 8px;
+  letter-spacing: -0.5px;
 }
 #main-content h3 {
-  font-size: 17px;
+  font-size: 19px;
   font-weight: 700;
   color: var(--orange);
-  margin: 22px 0 8px;
+  margin: 26px 0 10px;
 }
 #main-content h4 {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 700;
   color: var(--text);
-  margin: 14px 0 6px;
+  margin: 16px 0 8px;
 }
 #main-content p { margin-bottom: 10px; line-height: 1.6; }
 #main-content ul {
@@ -230,9 +236,9 @@ a:hover { text-decoration: underline; }
 
 /* ===== Info Boxes ===== */
 .info-box {
-  background: rgba(240, 244, 251, 0.7);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background: rgba(240, 244, 251, 0.4);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   border: 1px solid rgba(184, 204, 232, 0.5);
   border-left: 4px solid var(--primary);
   border-radius: 8px;
@@ -241,7 +247,7 @@ a:hover { text-decoration: underline; }
   font-size: 13px;
   line-height: 1.5;
 }
-.info-box.note { border-left-color: var(--orange); background: rgba(254, 248, 236, 0.7); border-color: rgba(245, 223, 170, 0.5); }
+.info-box.note { border-left-color: var(--orange); background: rgba(254, 248, 236, 0.45); border-color: rgba(245, 223, 170, 0.5); }
 .info-box .info-icon { color: var(--primary); font-weight: bold; margin-right: 6px; }
 
 blockquote {
@@ -303,9 +309,9 @@ blockquote {
 }
 .timetable-item {
   flex: 1;
-  background: rgba(254, 249, 232, 0.7);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background: rgba(254, 249, 232, 0.45);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   border: 1px solid rgba(234, 216, 152, 0.5);
   border-radius: 4px;
   padding: 8px 12px;
@@ -326,9 +332,9 @@ blockquote {
   border-radius: 8px;
   padding: 20px;
   margin-bottom: 16px;
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   box-shadow: 0 4px 15px rgba(0,0,0,0.03);
   transition: box-shadow 0.2s, transform 0.2s;
 }
@@ -368,9 +374,9 @@ blockquote {
 
 /* ===== Registration ===== */
 .reg-notice {
-  background: rgba(232, 240, 251, 0.7);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background: rgba(232, 240, 251, 0.45);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   border: 1px solid rgba(181, 206, 238, 0.5);
   border-radius: 6px;
   padding: 16px 20px;
@@ -432,12 +438,12 @@ blockquote {
   border-radius: 6px;
   margin-bottom: 18px;
   overflow: hidden;
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 .programme-item-header {
-  background: rgba(240, 244, 251, 0.7);
+  background: rgba(240, 244, 251, 0.45);
   padding: 12px 16px;
   font-size: 15px;
   font-weight: 700;
@@ -475,7 +481,7 @@ blockquote {
 
 /* ===== Footer ===== */
 #site-footer {
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.65);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-top: 1px solid rgba(200, 200, 200, 0.3);
