@@ -23,7 +23,7 @@ body {
   font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
   font-size: 14px;
   color: var(--text);
-  background-image: linear-gradient(rgba(245, 245, 245, 0.9), rgba(245, 245, 245, 0.9)), url('https://raw.githubusercontent.com/biochorl/De-novo-nanobody-re-design/main/Images/Background.png');
+  background-image: url('https://raw.githubusercontent.com/biochorl/De-novo-nanobody-re-design/main/Images/Background.png');
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
@@ -47,8 +47,10 @@ a:hover { text-decoration: underline; }
 
 /* ===== Header ===== */
 #site-header {
-  background: linear-gradient(135deg, #dde8f8 0%, #eef3fc 60%, #f5f0e8 100%);
-  border-bottom: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-bottom: 1px solid rgba(200, 200, 200, 0.3);
   padding: 20px 24px 16px;
 }
 #site-header h1 {
@@ -77,8 +79,10 @@ a:hover { text-decoration: underline; }
 
 /* ===== Nav Tabs ===== */
 #main-nav {
-  background: #fff;
-  border-bottom: 2px solid var(--border);
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-bottom: 2px solid rgba(200, 200, 200, 0.3);
   display: flex;
   padding: 0 24px;
   gap: 0;
@@ -111,8 +115,10 @@ a:hover { text-decoration: underline; }
 #sidebar {
   width: var(--sidebar-width);
   min-width: var(--sidebar-width);
-  background: #fff;
-  border-right: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-right: 1px solid rgba(255, 255, 255, 0.5);
   padding: 0;
   position: sticky;
   top: 0;
@@ -165,12 +171,15 @@ a:hover { text-decoration: underline; }
 /* ===== Main Content ===== */
 #main-content {
   flex: 1;
-  padding: 28px 32px;
+  padding: 32px 40px;
   max-width: 900px;
-  background: rgba(255, 255, 255, 0.7);
-  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
-  margin: 15px;
-  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  margin: 20px;
+  border-radius: 16px;
 }
 
 /* Page sections (shown/hidden via JS) */
@@ -221,8 +230,10 @@ a:hover { text-decoration: underline; }
 
 /* ===== Info Boxes ===== */
 .info-box {
-  background: #f0f4fb;
-  border: 1px solid #b8cce8;
+  background: rgba(240, 244, 251, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(184, 204, 232, 0.5);
   border-left: 4px solid var(--primary);
   border-radius: 8px;
   padding: 16px 20px;
@@ -230,7 +241,7 @@ a:hover { text-decoration: underline; }
   font-size: 13px;
   line-height: 1.5;
 }
-.info-box.note { border-left-color: var(--orange); background: #fef8ec; border-color: #f5dfaa; }
+.info-box.note { border-left-color: var(--orange); background: rgba(254, 248, 236, 0.7); border-color: rgba(245, 223, 170, 0.5); }
 .info-box .info-icon { color: var(--primary); font-weight: bold; margin-right: 6px; }
 
 blockquote {
@@ -292,8 +303,10 @@ blockquote {
 }
 .timetable-item {
   flex: 1;
-  background: #fef9e8;
-  border: 1px solid #ead898;
+  background: rgba(254, 249, 232, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(234, 216, 152, 0.5);
   border-radius: 4px;
   padding: 8px 12px;
   font-size: 13px;
@@ -309,11 +322,13 @@ blockquote {
 
 /* ===== Contributions ===== */
 .contribution-card {
-  border: 1px solid var(--border);
+  border: 1px solid rgba(221, 221, 221, 0.5);
   border-radius: 8px;
   padding: 20px;
   margin-bottom: 16px;
-  background: #fff;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   box-shadow: 0 4px 15px rgba(0,0,0,0.03);
   transition: box-shadow 0.2s, transform 0.2s;
 }
@@ -353,8 +368,10 @@ blockquote {
 
 /* ===== Registration ===== */
 .reg-notice {
-  background: #e8f0fb;
-  border: 1px solid #b5ceee;
+  background: rgba(232, 240, 251, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(181, 206, 238, 0.5);
   border-radius: 6px;
   padding: 16px 20px;
   display: flex;
@@ -411,14 +428,16 @@ blockquote {
 
 /* ===== Scientific Programme items ===== */
 .programme-item {
-  border: 1px solid var(--border);
+  border: 1px solid rgba(221, 221, 221, 0.5);
   border-radius: 6px;
   margin-bottom: 18px;
   overflow: hidden;
-  background: #fff;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 .programme-item-header {
-  background: #f0f4fb;
+  background: rgba(240, 244, 251, 0.7);
   padding: 12px 16px;
   font-size: 15px;
   font-weight: 700;
@@ -456,8 +475,10 @@ blockquote {
 
 /* ===== Footer ===== */
 #site-footer {
-  background: #fff;
-  border-top: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(200, 200, 200, 0.3);
   padding: 16px 24px;
   display: flex;
   justify-content: space-between;
