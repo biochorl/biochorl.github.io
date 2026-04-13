@@ -1,46 +1,70 @@
+// Simple Interactions script
+
 document.addEventListener('DOMContentLoaded', () => {
 
-  // Smooth scrolling for anchor links
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
+  // Navigation tabs (sidebar)
+  const navLinks = document.querySelectorAll('.nav-link');
+  const pageSections = document.querySelectorAll('.page-section');
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
       e.preventDefault();
       
-      const targetId = this.getAttribute('href').substring(1);
-      const targetElement = document.getElementById(targetId);
+      // Update active nav link
+      navLinks.forEach(l => l.classList.remove('active'));
+      e.target.classList.add('active');
       
-      if (targetElement) {
-        window.scrollTo({
-          top: targetElement.offsetTop - 80, // Adjust for sticky nav
-          behavior: 'smooth'
-        });
-        
-        // Update active class
-        document.querySelectorAll('.nav-links a').forEach(link => link.classList.remove('active'));
-        this.classList.add('active');
-      }
+      // Show target section
+      const targetId = e.target.getAttribute('data-target');
+      pageSections.forEach(sec => {
+        sec.classList.remove('active');
+        if(sec.id === targetId) sec.classList.add('active');
+      });
+      
+      // Scroll to top
+      window.scrollTo(0, 0);
     });
   });
 
-  // Accordion Logic
-  const accordionHeaders = document.querySelectorAll('.accordion-header');
-  accordionHeaders.forEach(header => {
-    header.addEventListener('click', () => {
-      const body = header.nextElementSibling;
-      const isOpen = body.classList.contains('open');
-      
-      // Close all accordions in the same container (optional, but clean)
-      header.parentElement.parentElement.querySelectorAll('.accordion-body').forEach(b => {
-        b.classList.remove('open');
-      });
-      header.parentElement.parentElement.querySelectorAll('.accordion-header span').forEach(s => {
-        s.textContent = '+';
-      });
+  // Timetable day tabs
+  const dayTabs = document.querySelectorAll('.day-tab');
+  const daySections = document.querySelectorAll('.timetable-day');
 
-      if (!isOpen) {
-        body.classList.add('open');
-        header.querySelector('span').textContent = '-';
-      }
+  dayTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      // Update active tab
+      dayTabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      
+      // Show target day section
+      const targetDay = tab.getAttribute('data-day');
+      daySections.forEach(sec => {
+        sec.classList.remove('active');
+        if(sec.id === targetDay) sec.classList.add('active');
+      });
     });
   });
 
+  // FAQ toggles
+  const faqQuestions = document.querySelectorAll('.faq-q');
+  faqQuestions.forEach(q => {
+    q.addEventListener('click', () => {
+      const answer = q.nextElementSibling;
+      q.classList.toggle('open');
+      answer.classList.toggle('open');
+    });
+  });
+  
+  // Programme items toggle
+  const progHeaders = document.querySelectorAll('.programme-item-header');
+  progHeaders.forEach(h => {
+    h.addEventListener('click', () => {
+      const body = h.nextElementSibling;
+      if (body.style.display === 'none') {
+        body.style.display = 'block';
+      } else {
+        body.style.display = 'none';
+      }
+    });
+  });
 });
