@@ -633,19 +633,6 @@
 
             const grid = document.getElementById('repos-grid');
             grid.innerHTML = '';
-            
-            // Inject custom Demo project
-            const demoCard = document.createElement('div');
-            demoCard.className = 'repo-card';
-            demoCard.innerHTML = `
-                <a href="/nanobodies-workshop/" target="_blank" class="repo-name">Demo: Nanobodies Workshop Website</a>
-                <p class="repo-desc">A highly curated, modern, and serverless workshop event website featuring glassmorphism, parallax scrolling, and Firebase Authentication integration.</p>
-                <div style="margin-top: 1rem; font-size: 0.8rem; color: #94a3b8;">
-                    <span style="margin-right: 1rem;">⭐ Showcase</span>
-                    <span>💻 HTML/CSS/JS (Firebase)</span>
-                </div>
-            `;
-            grid.appendChild(demoCard);
 
             repos.forEach(repo => {
                 if (repo.fork && repo.stargazers_count < 1 && repo.name !== 'biochorl.github.io') return;
