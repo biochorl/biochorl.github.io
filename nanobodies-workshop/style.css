@@ -192,6 +192,37 @@ h1, h2, h3, h4, .font-heading {
 }
 .page-section.active { display: block; }
 
+.programme-item-body.active {
+  display: block;
+}
+
+/* Speaker Block Placeholder in Programme */
+.speaker-block {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  margin-top: 8px;
+}
+.speaker-photo {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: #f1f5f9;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 2px solid var(--border);
+}
+.speaker-info {
+  flex: 1;
+}
+.speaker-name {
+  display: block;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 6px;
+  font-size: 15px;
+}
+
 /* ===== Content Typography ===== */
 #main-content h2 {
   font-size: 38px;
