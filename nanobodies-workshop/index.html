@@ -18,7 +18,11 @@
         <option value="it" style="color: black;">Italiano</option>
       </select>
     </div>
-    <a href="#">Login</a>
+    <div id="user-auth-status">
+      <a href="#" id="open-login-btn" onclick="openLoginModal(event)">Login / Register</a>
+      <span id="user-email-display" style="display:none; margin-right:10px; font-weight:600;"></span>
+      <a href="#" id="logout-btn" style="display:none;" onclick="logoutUser(event)">Logout</a>
+    </div>
   </div>
 
   <!-- Header -->
@@ -232,10 +236,15 @@
         
         <div class="reg-notice">
           <div class="reg-icon">ℹ</div>
-          <div>
+          <div id="registration-locked-state">
             <strong data-i18n="reg_login_req">Account required to register</strong><br>
             <span data-i18n="reg_login_desc">You must be logged in to register for this event.</span><br>
-            <a href="#" class="register-btn" data-i18n="btn_login">Login to Register</a>
+            <a href="#" class="register-btn" data-i18n="btn_login" onclick="openLoginModal(event)">Login to Register</a>
+          </div>
+          <div id="registration-unlocked-state" style="display:none;">
+            <strong>You are securely logged in!</strong><br>
+            <span>You may now proceed to complete your workshop registration. (Application form coming soon).</span><br>
+            <button class="register-btn" style="border:none; cursor:pointer;" onclick="alert('The abstract submission and registration form will be added here next!')">Proceed to Application</button>
           </div>
         </div>
       </section>
@@ -331,7 +340,35 @@
     </div>
   </footer>
 
+  <!-- Login/Register Modal -->
+  <div id="login-modal" class="modal-overlay">
+    <div class="modal-box">
+      <span class="close-modal" onclick="closeLoginModal()">&times;</span>
+      <h2 id="modal-title">Sign In</h2>
+      
+      <div class="auth-form-group">
+        <label>Email address</label>
+        <input type="email" id="auth-email" placeholder="you@university.edu" required>
+      </div>
+      
+      <div class="auth-form-group">
+        <label>Password</label>
+        <input type="password" id="auth-password" placeholder="••••••••" required>
+      </div>
+      
+      <div id="auth-error-msg" style="color: red; font-size: 13px; margin-bottom: 10px; display: none;"></div>
+
+      <button id="auth-submit-btn" class="register-btn" style="width: 100%; text-align: center; margin-top: 5px; border:none; cursor:pointer;">Sign In</button>
+      
+      <p class="auth-switch-text">
+        <span id="auth-switch-prompt">Don't have an account?</span> 
+        <a href="#" id="auth-switch-link" onclick="toggleAuthMode(event)">Register here</a>
+      </p>
+    </div>
+  </div>
+
   <script src="script.js"></script>
   <script src="lang.js"></script>
+  <script type="module" src="auth.js"></script>
 </body>
 </html>
